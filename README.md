@@ -1,4 +1,4 @@
 tju_gpa
 =======
 
-Undergraduate GPA Calculator for TJU
+Undergraduate GPA Calculator for (probably more than) TJU
