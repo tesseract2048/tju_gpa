@@ -18,8 +18,8 @@ class Stragety(Scale):
             sum_weighted += grading * course['credit']
             sum_credit += course['credit']
         if sum_credit == float(0):
-            return float(0)
-        return sum_weighted / sum_credit
+            return float(0), float(0)
+        return (sum_weighted / sum_credit, sum_credit)
 
     def getgrading(self, grading):
         if grading >= 90:

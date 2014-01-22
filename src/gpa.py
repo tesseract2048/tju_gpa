@@ -39,8 +39,8 @@ scale = getstragety("scales.%s" % options.scale)
 
 def getgpa(term):
     courses = school.courses(term)
-    gpa = scale.calc(courses)
-    return {"courses": courses, "gpa": gpa}
+    gpa, credit = scale.calc(courses)
+    return {"courses": courses, "credit": credit, "gpa": gpa}
 
 school.login({'username': options.username, 'password': options.password})
 
@@ -58,10 +58,14 @@ for term in gpa:
     t = gpa[term]
     print '--- TERM %s ---' % term
     print 'GPA: %f' % t['gpa']
+    print 'CREDIT: %f' % t['credit']
     print 'COURSES LIST:'
     for course in t['courses']:
         print '%s (%s): %s' % (course['name'], course['credit'], course['grading'])
         allcourses.append(course)
 
+totalgpa, totalcredit = scale.calc(allcourses)
+
 print '--- SUMMARY ---'
-print 'GPA: %f' % scale.calc(allcourses)
+print 'GPA: %f' % totalgpa
+print 'CREDIT: %f' % totalcredit

@@ -8,7 +8,7 @@ Undergraduate GPA Calculator for (probably more than) TJU
 
 python gpa.py -s ***\<school\>*** -c ***\<scale\>*** -u ***\<username\>*** -p ***\<password\>*** [-t ***\<term\>***]
 
-see pyhton gpa.py -h for help
+where term is optional. see python gpa.py -h for help.
 
 
 ## supported schools
