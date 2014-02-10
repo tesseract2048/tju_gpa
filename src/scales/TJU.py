@@ -14,6 +14,8 @@ class Stragety(Scale):
         sum_weighted = float(0)
         sum_credit = float(0)
         for course in courses:
+            if course['grading'] < 60:
+                continue
             grading = self.getgrading(course['grading'])
             sum_weighted += grading * course['credit']
             sum_credit += course['credit']
